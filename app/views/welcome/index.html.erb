@@ -1,0 +1,13 @@
+<span>
+  <%- if user_signed_in? %>
+    <%= "Signed in as #{current_user.email}. Not you?" %>
+    <%= link_to 'Sign out', destroy_user_session_path %>
+    <br>
+    <%= link_to 'Wall', 'thematrixfcbk/wall' %>
+    <br>
+    <%= current_user %>
+  <%- else %>
+    <%= link_to 'Sign in with facebook', user_omniauth_authorize_path(:facebook) %>
+  <%- end %>
+</span>
+
